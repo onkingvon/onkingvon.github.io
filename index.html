@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+
+<div class="container">
+
+    <form action="process_payment.php" method="post">
+
+        <div class="row">
+
+            <!-- Removed the billing section -->
+
+            <div class="col">
+
+                <h3 class="title">payment</h3>
+                
+
+                <div class="inputBox">
+                    <span>cards accepted :</span>
+                    <img src="images/card_img.png" alt="">
+                </div>
+                <div class="inputBox">
+                    <span>name on card :</span>
+                    <input type="text" name="card_holder" placeholder="John Doe" pattern="[A-Za-z\s]+" required>
+                </div>
+                <div class="inputBox">
+                    <span>credit card number :</span>
+                    <input type="text" id="card_number" placeholder="1111 2222 3333 4444" maxlength="19" oninput="formatCardNumber()" onkeypress="return isNumberKey(event)" required />
+                    <script>
+                      // Script for formatting credit card number (as in your original code)
+                      // ...
+                    </script>
+                </div>
+                <div class="inputBox">
+                    <span>exp month/year :</span>
+                    <input type="text" name="expiry_date" id="expiryDate" name="expiryDate" placeholder="01/26" maxlength="5"  oninput="validateExp(this)" required>
+                    <script>
+                      // Script for formatting expiry date (as in your original code)
+                      // ...
+                    </script>
+                </div>
+
+                <div class="flex">
+                    <div class="inputBox">
+                        <span>CVV :</span>
+                        <input type="number" name="cvv" placeholder="123" maxlength="3" oninput="validatecc(this)"  required>
+                        <script>
+                            // Script for validating CVV (as in your original code)
+                            // ...
+                        </script>
+                    </div>
+                </div>
+
+            </div>
+    
+        </div>
+
+        <input type="submit" value="submit($2)" class="submit-btn">
+
+    </form>
+
+</div>    
+    
+</body>
+</html>
